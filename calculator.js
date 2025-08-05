@@ -33,3 +33,35 @@ const operate = (n1, n2) => {
       break;
   }
 }
+
+/////////////////////////////////////////
+// DISPLAYING NUMBERS ON THE SCREEN
+
+// Display numbers
+let displayContent = [];
+const display = document.querySelector('.display');
+const numberButtons = document.querySelectorAll('.number-btn');
+
+numberButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (displayContent.length == 10) return;
+    displayContent.push(button.textContent);
+    display.textContent = displayContent.join('');
+  });
+});
+
+// Clear display
+const clearButton = document.querySelector('.clear-btn');
+
+clearButton.addEventListener("click", () => {
+  displayContent = [];
+  display.textContent = '';
+});
+
+// Delete last number
+const backspaceButton = document.querySelector('.backspace-btn');
+
+backspaceButton.addEventListener("click", () => {
+  displayContent.pop();
+  display.textContent = displayContent.join('');
+});

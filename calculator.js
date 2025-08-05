@@ -45,6 +45,7 @@ const numberButtons = document.querySelectorAll('.number-btn');
 numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (displayContent.length == 10) return;
+    if (button.textContent == '.' && displayContent.includes('.')) return;
     displayContent.push(button.textContent);
     display.textContent = displayContent.join('');
   });

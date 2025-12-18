@@ -112,6 +112,9 @@ operatorButtons.forEach((button) => {
       // Clear variable to receive 2nd number for the new operation
       displayContent = [];
       operator = button.textContent;
+    } else if (operator != '' && operatorPressed) {
+      // Store new operator if user presses an operator button two times
+      operator = button.textContent;
     }
   });
 });
